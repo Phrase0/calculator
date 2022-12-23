@@ -54,7 +54,7 @@
                                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFT-pi-YDu">
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFT-pi-YDu">
                                                 <rect key="frame" x="286" y="0.0" width="89" height="88"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -63,7 +63,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2e-HM-o5m"/>
+                                                    <action selector="opration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CV4-qA-siE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -107,7 +107,7 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="URU-5I-0QP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raq-3r-l9e">
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raq-3r-l9e">
                                                 <rect key="frame" x="286" y="0.0" width="89" height="88.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -116,7 +116,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="multiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffM-AQ-eOw"/>
+                                                    <action selector="opration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h4H-NH-V0Q"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -160,7 +160,7 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XXF-rC-0Dd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j79-9F-KrE">
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j79-9F-KrE">
                                                 <rect key="frame" x="286" y="0.0" width="89" height="88"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -169,7 +169,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="subtract:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCk-QG-7IJ"/>
+                                                    <action selector="opration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6sl-1t-u82"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -213,7 +213,7 @@
                                                     <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kMA-CE-lJk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2a-P3-dyR">
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2a-P3-dyR">
                                                 <rect key="frame" x="286" y="0.0" width="89" height="88.5"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -222,7 +222,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mi0-tG-5Yx"/>
+                                                    <action selector="opration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="opU-wi-elm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
