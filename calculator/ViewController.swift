@@ -62,25 +62,24 @@ class ViewController: UIViewController {
         performingMath = true
         
         switch sender.tag {
-        case 1:
+        case 1: //加
             label.text = "＋"
             //ex: equation = 0 numberOnScreen = 3 equation = "0" + "3" + "+"
             //ex: equation = "0" + "3" + "+" numberOnScreen = 2 equation = "0" + "3" + "+" + "2" + "+"
             equation += String(numberOnScreen) + "+"
             print(equation)
             
-        case 2:
+        case 2:  //減
             label.text = "－"
-
             equation += String(numberOnScreen) + "-"
             print(equation)
             
-        case 3:
+        case 3:  //乘
             label.text = "×"
             equation += String(numberOnScreen) + "*"
             print(equation)
             
-        case 4:
+        case 4:  //除
             label.text = "÷"
             equation += String(numberOnScreen) + "/"
             print(equation)
@@ -90,6 +89,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
 
     //等號
@@ -103,7 +103,6 @@ class ViewController: UIViewController {
                 print("錯誤")
                 label.text = "錯誤"
             }else{
- 
                 //先乘除後加減的公式：
                 //let exp: NSExpression = NSExpression(format: 運算式String)
                 //let result: Double = exp.expressionValue(with:nil, context: nil) as? Double
@@ -119,6 +118,29 @@ class ViewController: UIViewController {
             equation = ""
         }
     }
+    
+    //運算結果是整數時，不顯示.0
+    func makeOKNumberString(from number:Double){
+        
+        //出現小數時最多出現第8位
+        //加入變數：最後要顯現的文字
+        var okText:String
+        
+        //floor:四捨五入，並回傳小於或等於參數的整數
+        if floor(number) == number{
+            //ex: 3.0 = 3 則回傳整數3
+            okText = String(Int(number))
+        }else{
+            okText = String(number)
+        }
+        //出現小數時最多出現第8位
+        if okText.count >= 8{
+            //prefix(8):取前8位
+            okText = String(okText.prefix(8))
+        }
+        
+        label.text = okText
+    }
       
     
     //AC
@@ -131,32 +153,18 @@ class ViewController: UIViewController {
         startNew = true
     }
     
-    
-    //運算結果是整數時，不顯示.0
-    func makeOKNumberString(from number:Double){
-        
-        //出現小數時最多出現第8位
-        //加入變數：最後要顯現的文字
-        var okText:String
-        
-        //floor:四捨五入，並回傳小於或等於參數的整數
-        if floor(number) == number{
-            okText = String(Int(number))
-        }else{
-            okText = String(number)
+    //後退鍵
+    @IBAction func deleteNumber(_ sender: UIButton) {
+        if label.text != nil{
+            if label.text!.count > 1{
+                label.text?.removeLast()
+            }else{
+            label.text = "0"
         }
-        //出現小數時最多出現第8位
-        if okText.count >= 8{
-            //prefix(7):取前8位
-            okText = String(okText.prefix(8))
-        }
-        
-        label.text = okText
     }
+}
     
-    
-    
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
