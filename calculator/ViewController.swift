@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     //儲存目前畫面上的數字
     var numberOnScreen:Double = 0
     
-    //記錄算式的字串
+    //記錄算式的字串(因先乘除後加減的公式需帶入string，故先建一個字串)
     var equation:String = ""
     
     //記錄目前是不是在運算的過程當中
@@ -64,6 +64,8 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 1:
             label.text = "＋"
+            //ex: equation = 0 numberOnScreen = 3 equation = "0" + "3" + "+"
+            //ex: equation = "0" + "3" + "+" numberOnScreen = 2 equation = "0" + "3" + "+" + "2" + "+"
             equation += String(numberOnScreen) + "+"
             print(equation)
             
@@ -88,22 +90,30 @@ class ViewController: UIViewController {
         }
         
     }
+    
 
     //等號
     @IBAction func giveMeAnswer(_ sender: UIButton) {
         if performingMath == true{
-            
             equation += String(numberOnScreen)
             print(equation)
-  
             
-            //先乘除後加減的公式：
-            //let exp: NSExpression = NSExpression(format: 運算式String)
-            //let result: Double = exp.expressionValue(with:nil, context: nil) as? Double
-            let expression = NSExpression(format: equation)
-            if let result = expression.expressionValue(with: nil, context: nil) as? Double{
-                makeOKNumberString(from: result)
+            //解決除以0會失敗的問題
+            if equation.contains("/0.0"){
+                print("錯誤")
+                label.text = "錯誤"
+            }else{
+ 
+                //先乘除後加減的公式：
+                //let exp: NSExpression = NSExpression(format: 運算式String)
+                //let result: Double = exp.expressionValue(with:nil, context: nil) as? Double
+                let expression = NSExpression(format: equation)
+                if let result = expression.expressionValue(with: nil, context: nil) as? Double{
+                    makeOKNumberString(from: result)
+                }
+                
             }
+            
            performingMath = false
             startNew = true
             equation = ""
